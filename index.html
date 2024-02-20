@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido de Namoro</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #fce4ec; /* Cor de fundo rosa claro */
+    }
+    #coracao {
+      font-size: 48px;
+      color: red;
+    }
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      cursor: pointer;
+      position: absolute;
+    }
+    #sim {
+      background-color: #4CAF50; /* Cor verde para o botão 'Sim' */
+      color: white;
+      left: 40%; /* Ajustei a posição do botão 'Sim' */
+    }
+    #nao {
+      background-color: #FF5555; /* Cor vermelha para o botão 'Não' */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<span id="coracao">💔</span>
+
+<button id="sim" onclick="redirecionarParaYoutube()">Sim</button>
+<button id="nao" onclick="mudarPosicao()">Não</button>
+
+<script>
+  async function redirecionarParaYoutube() {
+    // Aguarda um curto período para garantir a execução da animação antes do redirecionamento
+    await new Promise(resolve => setTimeout(resolve, 500));
+    window.location.href = 'https://www.youtube.com/watch?v=kffacxfA7G4'
+  }
+
+  function mudarPosicao() {
+    const botaoNao = document.getElementById('nao');
+    const novaPosicaoX = Math.floor(Math.random() * (window.innerWidth - botaoNao.clientWidth));
+    const novaPosicaoY = Math.floor(Math.random() * (window.innerHeight - botaoNao.clientHeight));
+
+    botaoNao.style.left = novaPosicaoX + 'px';
+    botaoNao.style.top = novaPosicaoY + 'px';
+  }
+window.alert("Quer namorar comigo bebezinha do job?")
+</script>
+
+</body>
+</html>
